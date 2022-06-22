@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ReshiftSecurity-Intellij-Report">
+    <isGitProject>true</isGitProject>
+    <gitBranch>master</gitBranch>
+    <gitRepo>git@gitlab.thetestpeople.com:academy/loan-application.git</gitRepo>
+    <projectName>academy-loan-application-system</projectName>
+    <securityIssues />
+  </component>
+</project>

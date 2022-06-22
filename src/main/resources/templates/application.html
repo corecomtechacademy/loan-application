@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="fragments/header :: header-css"/>
+</head>
+<body>
+
+<div th:replace="fragments/header :: header"/>
+<div class="container">
+    <h1>New Application</h1>
+    <form action="#" method="post" th:action="@{/application}" th:object="${application}">
+        <table>
+            <tr>
+                <td>First name:*</td>
+                <td><input th:field="*{firstName}" type="text"/></td>
+                <td th:errors="*{firstName}" th:if="${#fields.hasErrors('firstName')}">First Name Error</td>
+            </tr>
+            <tr>
+                <td>Last name:*</td>
+                <td><input th:field="*{lastName}" type="text"/></td>
+                <td th:errors="*{lastName}" th:if="${#fields.hasErrors('lastName')}">Last Name Error</td>
+            </tr>
+            <tr>
+                <td>Age:*</td>
+                <td><input th:field="*{age}" type="text"/></td>
+                <td th:errors="*{age}" th:if="${#fields.hasErrors('age')}">Age Error</td>
+            </tr>
+            <tr>
+                <td>Address Line 1:*</td>
+                <td><input th:field="*{addressLine1}" type="text"/></td>
+                <td th:errors="*{addressLine1}" th:if="${#fields.hasErrors('addressLine1')}">Address Error</td>
+            </tr>
+            <tr>
+                <td>Address Line 2:*</td>
+                <td><input th:field="*{addressLine2}" type="text"/></td>
+                <td th:errors="*{addressLine2}" th:if="${#fields.hasErrors('addressLine2')}">Address Error</td>
+            </tr>
+            <tr>
+                <td>Address Line 3:</td>
+                <td><input th:field="*{addressLine3}" type="text"/></td>
+                <td th:errors="*{addressLine3}" th:if="${#fields.hasErrors('addressLine3')}">Address Error</td>
+            </tr>
+            <tr>
+                <td>Address Line 4:</td>
+                <td><input th:field="*{addressLine4}" type="text"/></td>
+                <td th:errors="*{addressLine4}" th:if="${#fields.hasErrors('addressLine4')}">Address Error</td>
+            </tr>
+            <tr>
+                <td>Postcode:*</td>
+                <td><input th:field="*{postCode}" type="text"/></td>
+                <td th:errors="*{postCode}" th:if="${#fields.hasErrors('postCode')}">Address Error</td>
+            </tr>
+            <tr>
+                <td>Email:*</td>
+                <td><input th:field="*{email}" type="text"/></td>
+                <td th:errors="*{email}" th:if="${#fields.hasErrors('email')}">Email Error</td>
+            </tr>
+            <tr>
+                <td>Loan Amount:*</td>
+                <td><input th:field="*{amount}" type="text"/></td>
+                <td th:errors="*{amount}" th:if="${#fields.hasErrors('amount')}">Email Error</td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit">Submit</button>
+                </td>
+                <td style="color:red;"> (*) Fields marked with an asterisk are mandatory</td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

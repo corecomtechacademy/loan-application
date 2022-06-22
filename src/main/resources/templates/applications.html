@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="fragments/header :: header-css"/>
+</head>
+<body>
+
+<div th:replace="fragments/header :: header"/>
+
+<div th:switch="${applications}" class="container">
+    <h2 th:case="null">No applications yet!</h2>
+    <div th:case="*">
+        <h2>Applications</h2>
+    <table  style="border-collapse: separate; border-spacing: 10px;">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Address Line 1</th>
+            <th>Address Line 2</th>
+            <th>Address Line 3</th>
+            <th>Address Line 4</th>
+            <th>Postcode</th>
+            <th>Email</th>
+            <th>Amount</th>
+            <th>Result</th>
+            <th>Delete?</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="app : ${applications}">
+            <td th:text="${app.id+1}"></td>
+            <td th:text="${app.firstName}"></td>
+            <td th:text="${app.lastName}"></td>
+            <td th:text="${app.age}"></td>
+            <td th:text="${app.addressLine1}"></td>
+            <td th:text="${app.addressLine2}"></td>
+            <td th:text="${app.addressLine3}"></td>
+            <td th:text="${app.addressLine4}"></td>
+            <td th:text="${app.postCode}"></td>
+            <td th:text="${app.email}"></td>
+            <td th:text="${app.amount}"></td>
+            <td>Waiting for overnight processing</td>
+            <td><a th:href="@{/application/{id}/delete(id=${app.id})}" onClick="return confirm('Are you sure?')">Delete</a></td>
+        </tr>
+
+        </tbody>
+    </table>
+    </div>
+</div>
+</body>
+</html>
