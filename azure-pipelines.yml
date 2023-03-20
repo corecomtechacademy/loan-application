@@ -42,5 +42,5 @@ stages:
       inputs:
         containerRegistry: 'loanapp'
         command: 'start'
-        arguments: '-d -p 8080:8080'
+        arguments: '-p 8080:8080'
         container: 'corecomtechacademyloanapplication'
