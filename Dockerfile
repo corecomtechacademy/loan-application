@@ -1,7 +1,5 @@
 # Install Maven container
-FROM maven:3.6.1-jdk-11
-
-LABEL creator="Rajan Aggarwal <rajan.aggarwal@ten10.com> & Nathanial Sydenham <nathanial.sydenham@ten10.com>"
+FROM maven
 
 # Update package list and download dependencies
 RUN apt-get update && apt-get install -y git \
